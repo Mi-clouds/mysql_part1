@@ -4,14 +4,16 @@ use library;
 create table if not exists type_of_user(
 user_type_id int auto_increment not null primary key,
 user_type varchar(30) not null,
-daily_fine decimal(3, 2) not null
+daily_fine decimal(3, 2) not null,
+loan_days_allowed int not null
 );
 
-insert into type_of_user (user_type, daily_fine) values ('volunteer', 0.50);
-insert into type_of_user (user_type, daily_fine) values ('HE-student', 0.25);
-insert into type_of_user (user_type, daily_fine) values ('junior', 0.00);
-insert into type_of_user (user_type, daily_fine) values ('staff', 0.15);
-insert into type_of_user (user_type, daily_fine) values ('standard', 0.75);
+insert into type_of_user (user_type, daily_fine, loan_days_allowed) values ('volunteer', 0.50, 45);
+insert into type_of_user (user_type, daily_fine, loan_days_allowed) values ('HE-student', 0.25, 45);
+insert into type_of_user (user_type, daily_fine, loan_days_allowed) values ('junior', 0.00, 30);
+insert into type_of_user (user_type, daily_fine, loan_days_allowed) values ('staff', 0.15, 45);
+insert into type_of_user (user_type, daily_fine, loan_days_allowed) values ('standard', 0.75, 30);
+insert into type_of_user (user_type, daily_fine, loan_days_allowed) values ('disability', 0.15, 45);
 
 -- select * from type_of_user;
 
