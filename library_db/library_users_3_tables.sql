@@ -5,15 +5,16 @@ create table if not exists type_of_user(
 user_type_id int auto_increment not null primary key,
 user_type varchar(30) not null,
 daily_fine decimal(3, 2) not null,
-loan_days_allowed int not null
+loan_days_allowed int not null,
+loan_item_limit int not null
 );
 
-insert into type_of_user (user_type, daily_fine, loan_days_allowed) values ('volunteer', 0.50, 45);
-insert into type_of_user (user_type, daily_fine, loan_days_allowed) values ('HE-student', 0.25, 45);
-insert into type_of_user (user_type, daily_fine, loan_days_allowed) values ('junior', 0.00, 30);
-insert into type_of_user (user_type, daily_fine, loan_days_allowed) values ('staff', 0.15, 45);
-insert into type_of_user (user_type, daily_fine, loan_days_allowed) values ('standard', 0.75, 30);
-insert into type_of_user (user_type, daily_fine, loan_days_allowed) values ('disability', 0.15, 45);
+insert into type_of_user (user_type, daily_fine, loan_days_allowed, loan_item_limit) values ('volunteer', 0.50, 45, 10);
+insert into type_of_user (user_type, daily_fine, loan_days_allowed, loan_item_limit) values ('HE-student', 0.25, 45, 12);
+insert into type_of_user (user_type, daily_fine, loan_days_allowed, loan_item_limit) values ('junior', 0.00, 30, 8);
+insert into type_of_user (user_type, daily_fine, loan_days_allowed, loan_item_limit) values ('staff', 0.15, 45, 15);
+insert into type_of_user (user_type, daily_fine, loan_days_allowed, loan_item_limit) values ('standard', 0.75, 30, 8);
+insert into type_of_user (user_type, daily_fine, loan_days_allowed, loan_item_limit) values ('disability', 0.15, 45, 8);
 
 -- select * from type_of_user;
 
@@ -124,8 +125,9 @@ insert into user_data (library_card_no, first_name, last_name, address, borough,
 
 
 -- if tables need updating they can be dopped in the following order
--- drop table user_data;
--- drop table disability_type;
--- drop table type_of_user;
+drop table loans_table;
+drop table user_data;
+drop table disability_type;
+drop table type_of_user;
 
 
