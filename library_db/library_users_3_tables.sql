@@ -122,7 +122,7 @@ insert into user_data (library_card_no, first_name, last_name, address, borough,
 insert into user_data (library_card_no, first_name, last_name, address, borough, postal, telephone, date_of_birth, email, type_of_library_user_id, no_of_books_borrowed, age, family_id) values (818337485, 'Carrol',	'Kunimitsu', '67 Micawber St', 'Brockley', 'SE14 6RQ', '01260641258', '1994-08-26' ,'carrol_kunimitsu@yahoo.com', 5,	3,	26,	47);
 
 -- select * from user_data;
-
+-- update user_data set no_of_books_borrowed = 1 where library_card_no = 908505381;
 
 -- if tables need updating they can be dopped in the following order
 drop table loans_table;
